@@ -1,4 +1,6 @@
-import { nameCustomers, nyBusinesses } from "./BusinessList.js";
+import { agents, manufacturingBusinesses, nameCustomers, nyBusinesses } from "./BusinessList.js";
 
 nameCustomers()
-nyBusinesses("MD")
+nyBusinesses("NY")
+manufacturingBusinesses()
+agents()
