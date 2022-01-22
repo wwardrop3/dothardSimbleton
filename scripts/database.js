@@ -154,5 +154,8 @@ export const filteredCustomers = (state) => {
 
 
 
-
+export const filteredManufacturingBusinesses = () => {
+    const manBusiness = businesses.filter(variable => variable.companyIndustry === "Manufacturing")
+    return manBusiness
+}
 

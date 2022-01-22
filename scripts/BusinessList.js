@@ -1,5 +1,5 @@
 import { Customer } from "./Business.js";
-import { filteredCustomers, getCustomers } from "./database.js";
+import { filteredCustomers, getCustomers, filteredManufacturingBusinesses } from "./database.js";
 
 
 
@@ -29,3 +29,21 @@ export const nyBusinesses = (state) => {
     )
     customerTarget.innerHTML+= "</article>"
 }
+
+
+
+export const manufacturingBusinesses = () => {
+    const manBusiness = filteredManufacturingBusinesses()
+    customerTarget.innerHTML += `<article class = "manufacturingBusinesses">`
+    customerTarget.innerHTML+= "<h1>Manufacturing Businesses</h1>"
+    
+    manBusiness.forEach(
+        (manObject) => {
+            customerTarget.innerHTML += Customer(manObject)
+        }
+    )
+    customerTarget.innerHTML += `</article>`
+}
+
+
+
