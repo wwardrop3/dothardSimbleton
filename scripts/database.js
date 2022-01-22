@@ -159,3 +159,8 @@ export const filteredManufacturingBusinesses = () => {
     return manBusiness
 }
 
+export const filteredAgents = () => {
+    const agents = businesses.map(agent => {return [`${agent.purchasingAgent.nameLast} ${agent.purchasingAgent.nameFirst}`, agent.companyName, agent.phoneWork]}
+    )
+    return agents
+}
