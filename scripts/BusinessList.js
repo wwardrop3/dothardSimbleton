@@ -49,12 +49,15 @@ export const agents = () => {
     const agents = filteredAgents()
     customerTarget.innerHTML += `<article class = "agents">`
     customerTarget.innerHTML+= "<h1>Business Agents</h1>"
-    customerTarget.innerHTML+= "<ul>"
+    
     
     
     agents.forEach(
         (agent) => {
-            customerTarget.innerHTML += `<li>${agent[0]}, ${agent[1]}, ${agent[2]}`
+            customerTarget.innerHTML+= `<h2 class="customer__">${agent[0]}</h2>
+            <div class="customer__address">
+                <p>${agent[1]} </p>
+                <p>${agent[2]}</p>`
         }
     )
     customerTarget.innerHTML+= "</ul>"
