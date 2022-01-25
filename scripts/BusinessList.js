@@ -54,13 +54,78 @@ export const agents = () => {
     
     agents.forEach(
         (agent) => {
-            customerTarget.innerHTML+= `<h2 class="customer__">${agent[0]}</h2>
+            customerTarget.innerHTML+= `<h2 class="customer__">${agent.agentName}</h2>
             <div class="customer__address">
-                <p>${agent[1]} </p>
-                <p>${agent[2]}</p>`
+                <p>${agent.agentCompany} </p>
+                <p>${agent.agentPhone}</p>`
         }
     )
     customerTarget.innerHTML+= "</ul>"
     customerTarget.innerHTML += `</article>`
 }
 
+// const companySearchResultArticle = document.querySelector(".foundCompanies")
+
+// document
+//     .querySelector("#companySearch")
+//         .addEventListener(
+//             "keypress", //when we press the key enter
+//             keyPressEvent => { //do this when we press the key
+//                 if (keyPressEvent.charCode === 13) { //if the key that is being pressed is enter
+//                     /*
+//                         When the user presses 'Enter', find the matching business.
+
+//                         You can use the `.includes()` string method to
+//                         see if a smaller string is part of a larger string.
+
+//                         Example: business.companyName.includes(keyPressEvent.target.value)
+//                     */
+//                     const userInput = document.getElementById("companySearch").value
+//                     const businesses = getCustomers()
+
+//                     const foundBusiness = businesses.find(company => company.companyName.includes(userInput))
+//                     companySearchResultArticle.innerHTML += Customer(foundBusiness)
+                    
+
+                    
+
+                    
+//                 }
+//         });
+
+const companySearchResultArticle = document.querySelector(".foundCompanies")
+
+document
+    .querySelector("#companySearch")
+        .addEventListener(
+            "keypress", //when we press the key enter
+            keyPressEvent => { //do this when we press the key
+                if (keyPressEvent.charCode === 13) { //if the key that is being pressed is enter
+                    /*
+                        When the user presses 'Enter', find the matching business.
+
+                        You can use the `.includes()` string method to
+                        see if a smaller string is part of a larger string.
+
+                        Example: business.companyName.includes(keyPressEvent.target.value)
+                    */
+                    const userInput = document.getElementById("companySearch").value
+                    const agentList = filteredAgents()
+
+                    const foundAgent = agentList.find(agent => agent.agentName.includes(userInput))
+                    if(foundAgent===undefined) {
+                        window.alert("Try again.  No agent found.")
+                    } else {
+                        companySearchResultArticle.innerHTML =`<div class="customer__address">
+                        <h2><p>${foundAgent.agentName} </p></h2>
+                        <p>${foundAgent.agentCompany}</p>
+                        <p>${foundAgent.agentPhone}</p>`
+                    }
+                    
+                    
+
+                    
+
+                    
+                }
+        });
