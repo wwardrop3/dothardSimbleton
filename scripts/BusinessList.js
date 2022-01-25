@@ -96,7 +96,7 @@ export const agents = () => {
 const companySearchResultArticle = document.querySelector(".foundCompanies")
 
 document
-    .querySelector("#companySearch")
+    .querySelector("#agentSearch")
         .addEventListener(
             "keypress", //when we press the key enter
             keyPressEvent => { //do this when we press the key
@@ -109,7 +109,7 @@ document
 
                         Example: business.companyName.includes(keyPressEvent.target.value)
                     */
-                    const userInput = document.getElementById("companySearch").value
+                    const userInput = document.getElementById("agentSearch").value
                     const agentList = filteredAgents()
 
                     const foundAgent = agentList.find(agent => agent.agentName.includes(userInput))
